@@ -29,7 +29,6 @@ const NavBar = () => {
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
     { name: 'Projects', to: '/projects' },
-    { name: 'Contact', to: '/contact' },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -62,9 +61,8 @@ const NavBar = () => {
           />
           <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'space-evenly' }}>
             {pages.map((page) => (
-              <Link to={page?.to} style={{ textDecoration: 'none' }}>
+              <Link key={page.name} to={page?.to} style={{ textDecoration: 'none' }}>
                 <Button
-                  key={page.name}
                   onClick={handleCloseNavMenu}
                   sx={{ display: 'block' }}
                   disableRipple={true}

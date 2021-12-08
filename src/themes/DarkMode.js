@@ -28,6 +28,19 @@ DarkMode = createTheme(DarkMode, {
           color: DarkMode.palette.text.primary
         }
       }
+    },
+
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: DarkMode.palette.text.primary,
+          fontSize: '18pt',
+          '&:hover': {
+            color: DarkMode.palette.text.secondary,
+            fontSize: '17pt'
+          }
+        }
+      }
     }
   },
 })
