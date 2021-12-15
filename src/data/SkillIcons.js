@@ -1,5 +1,6 @@
-import { SiC, SiCss3, SiDocker, SiHtml5, SiReact, SiFastapi, SiFlask, SiJava, SiJavascript, SiJira, SiMaterialui, SiPython, SiGnubash, SiGit, SiGithub, SiGitlab, SiGithubactions, SiPerl, SiTailwindcss } from "react-icons/si";
-import Box from '@mui/material/Box';
+import { SiC, SiCss3, SiDocker, SiHtml5, SiReact, SiFastapi, SiFlask, SiJava, 
+  SiJavascript, SiJira, SiMaterialui, SiPython, SiGnubash, SiGit, SiGithub, 
+  SiGitlab, SiGithubactions, SiPerl, SiTailwindcss } from "react-icons/si";
 
 const ALL = '0';
 const FRONTEND = '1';

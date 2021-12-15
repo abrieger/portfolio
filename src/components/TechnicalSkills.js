@@ -36,11 +36,6 @@ const SkillsGrid = styled(Grid)(({theme}) => ({
   marginTop: '0.5em'
 }))
 
-const GridItem = styled(Grid)(({theme}) => ({
-  fontSize: '24pt', 
-  marginTop: '0.5em'
-}))
-
 const TechnicalSkills = () => {
   const [selected, setSelected] = React.useState('0');
 
@@ -93,8 +88,9 @@ const TechnicalSkills = () => {
               <React.Fragment>
                 <Typography variant="h6" color="inherit">{skill.title}</Typography>
                 <Typography><b>Used in</b>: {skill.when}</Typography>
-              </React.Fragment>
-            }>
+              </React.Fragment>}
+              disableInteractive
+            >
               <Box 
                 sx={{ fontSize: '24pt', padding: '10px 0 5px 0' }}
               >

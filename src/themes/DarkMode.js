@@ -3,8 +3,9 @@ import { createTheme } from '@mui/material/styles';
 let DarkMode = createTheme({
   palette: {
     background: {
-      primary: '#000',
-      secondary: '#ffffff'
+      alternate: '#111',
+      secondary: '#ffffff',
+      primary: '#222',
     },
     text: {
       primary: '#ffffff',

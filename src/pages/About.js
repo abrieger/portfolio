@@ -29,7 +29,7 @@ const About = () => {
   }
 
   return (
-    <Container sx={{ display: 'flex', flexDirection: 'column', width: '80%' }}>
+    <Container sx={{ display: 'flex', flexDirection: 'column', width: '80%', marginTop: '1em' }}>
       <Box sx={{ display: 'flex', alignItems: 'center'}}>
         <Typography variant="h4">
           About Me
@@ -55,7 +55,7 @@ const About = () => {
         </>
         : <StyledPara>
           <EmphasisAlt component="span" sx={{ fontWeight: 'bold' }}>tl;dr </EmphasisAlt>
-          Software engineering lets me be <Emphasis component="span">creative</Emphasis> and think about <Emphasis component="span">what could be</Emphasis> rather than what has been.
+          I am a  Computer Science student in my penultimate year at UNSW looking to <Emphasis component="span">make an impact</Emphasis> in the world of software engineering. I am excited by the opportunity to be <Emphasis component="span">creative</Emphasis> and think about <Emphasis component="span">what could be</Emphasis> rather than what has been.
           </StyledPara>}
         <Box sx={{ marginTop: '1.5em' }}>
           <Typography variant="h5" sx={{ textAlign: 'left' }}>

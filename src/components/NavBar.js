@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const StyledAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'home'
   })(({home, theme}) => ({
-  backgroundColor: theme.palette.background.primary,
+  backgroundColor: theme.palette.background.alternate,
   background: home ? 'none' : '',
   boxShadow: 'none',
   }));
@@ -46,16 +46,18 @@ const NavBar = ({ home }) => {
     <StyledAppBar position="sticky" home={home} >
       <Container maxWidth="xxl" >
         <Toolbar disableGutters sx={{ width: '100%', justifyContent: 'space-between', display: 'flex' }} >
-          <Button>
-            <LogoText
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ mr: 2, display: { xs: 'flex', md: 'flex' } }}
-            >
-              AB
-            </LogoText>
-          </Button>
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <Button>
+              <LogoText
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ mr: 2, display: { xs: 'flex', md: 'flex' } }}
+              >
+                AB
+              </LogoText>
+            </Button>
+          </Link>
           <Dropdown
             pages={pages}
             handleOpenNavMenu={handleOpenNavMenu}

@@ -4,15 +4,6 @@ import NavBar from './components/NavBar';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Toolbar from '@mui/material/Toolbar';
-
-// const Root = styled('div', {
-//   shouldForwardProp: (prop) => prop !== 'home'
-//   })(({home, theme}) => ({
-//   minHeight: '100vh',
-//   backgroundColor: theme.palette.background.primary,
-//   background: home ? 'none' : '',
-// }))
 
 const Content = styled('div', {
   shouldForwardProp: (prop) => prop !== 'home'
@@ -39,15 +30,13 @@ function App() {
 
   return (
     <ThemeProvider theme={DarkMode}>
-        <NavBar home={isHome()}/>
-      {/* <Root home={isHome()}> */}
-        <Content home={isHome()}>
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/about" element={<About />}></Route>
-          </Routes>
-        </Content>
-      {/* </Root> */}
+      <NavBar home={isHome()}/>
+      <Content home={isHome()}>
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/about" element={<About />}></Route>
+        </Routes>
+      </Content>
     </ThemeProvider>
   );
 }
