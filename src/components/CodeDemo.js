@@ -60,7 +60,9 @@ const CodeDemo = () => {
     <StyledBox>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '1em' }}>
       <PlayArrowIcon onClick={playCode} aria-label='Play code demo'/>
-      <code style={{ textAlign: 'center' }}>print(random.choice(["Pizza", "Pad Thai", "Schnitzel", "something healthy :(", "Pizza!", "Pizza!!"]))</code>
+      <code style={{ textAlign: 'center' }}>
+        print(random.choice(["Pizza", "Pad Thai", "Schnitzel", "something healthy :(", "Pizza!", "Pizza!!"]))
+      </code>
       </Box>
       <Transition
       in={appear}

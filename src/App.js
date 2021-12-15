@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Projects from './pages/Projects';
 
 const Content = styled('div', {
   shouldForwardProp: (prop) => prop !== 'home'
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/about" element={<About />}></Route>
+          <Route exact path="/projects" element={<Projects />}></Route>
         </Routes>
       </Content>
     </ThemeProvider>
