@@ -9,11 +9,13 @@ import Dropdown from './Dropdown';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
-const StyledAppBar = styled(AppBar)(({theme}) => ({
+const StyledAppBar = styled(AppBar, {
+  shouldForwardProp: (prop) => prop !== 'home'
+  })(({home, theme}) => ({
   backgroundColor: theme.palette.background.primary,
-  background: 'none',
-  boxShadow: 'none'
-}));
+  background: home ? 'none' : '',
+  boxShadow: 'none',
+  }));
 
 const LogoText = styled(Typography)(({theme}) => ({
   color: theme.palette.text.alternate,
@@ -22,9 +24,9 @@ const LogoText = styled(Typography)(({theme}) => ({
   marginBottom: '-1px'
 }));
 
-const NavBar = () => {
+const NavBar = ({ home }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
+  console.log(home)
   const pages = [
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
@@ -40,7 +42,8 @@ const NavBar = () => {
   };
 
   return (
-    <StyledAppBar position="fixed" >
+    <React.Fragment>
+    <StyledAppBar position="sticky" home={home} >
       <Container maxWidth="xxl" >
         <Toolbar disableGutters sx={{ width: '100%', justifyContent: 'space-between', display: 'flex' }} >
           <Button>
@@ -75,6 +78,7 @@ const NavBar = () => {
         </Toolbar>
       </Container>
     </StyledAppBar>
+    </React.Fragment>
   )
 }
 

@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 let DarkMode = createTheme({
   palette: {
     background: {
-      primary: '#2a2d37',
+      primary: '#000',
       secondary: '#ffffff'
     },
     text: {
@@ -34,10 +34,10 @@ DarkMode = createTheme(DarkMode, {
       styleOverrides: {
         root: {
           color: DarkMode.palette.text.primary,
-          fontSize: '18pt',
+          fontSize: '22pt',
+          cursor: 'pointer',
           '&:hover': {
             color: DarkMode.palette.text.secondary,
-            fontSize: '17pt'
           }
         }
       }
