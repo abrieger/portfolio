@@ -5,9 +5,9 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const Dropdown = ({ pages, handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
-
   return (
     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
       <IconButton
@@ -40,7 +40,12 @@ const Dropdown = ({ pages, handleOpenNavMenu, handleCloseNavMenu, anchorElNav })
       >
         {pages.map((page) => (
           <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-            <Typography textAlign="center">{page.name}</Typography>
+            <Link to={page.to} style={{ textDecoration: 'none' }}>
+              <Typography textAlign="center" sx={{ color: 'black', display: 'flex', alignItems: 'center', gap: '1em' }}>
+                <Box>{page.icon}</Box>
+                <Box sx={{paddingBottom: '5px'}}>{page.name}</Box>
+              </Typography>
+            </Link>
           </MenuItem>
         ))}
       </Menu>

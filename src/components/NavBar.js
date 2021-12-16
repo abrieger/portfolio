@@ -8,6 +8,10 @@ import Button from '@mui/material/Button';
 import Dropdown from './Dropdown';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import MailIcon from '@mui/icons-material/Mail';
+import ComputerIcon from '@mui/icons-material/Computer';
 
 const StyledAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'home'
@@ -24,13 +28,26 @@ const LogoText = styled(Typography)(({theme}) => ({
   marginBottom: '-1px'
 }));
 
+const NavBarLink = styled(Typography)(({theme}) => ({
+  fontWeight: 'bold',
+  '&:hover': {
+    color: theme.palette.text.secondary
+  }
+}));
+
+const iconStyle = {
+  color: 'black', 
+  fontSize: '18pt'
+}
+
 const NavBar = ({ home }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   console.log(home)
   const pages = [
-    { name: 'Home', to: '/' },
-    { name: 'About', to: '/about' },
-    { name: 'Projects', to: '/projects' },
+    { name: 'Home', to: '/', icon: <HomeIcon style={iconStyle} /> },
+    { name: 'About', to: '/about', icon: <PersonIcon style={iconStyle}/> },
+    { name: 'Projects', to: '/projects', icon: <ComputerIcon style={iconStyle}/> },
+    { name: 'Contact', to: '/contact', icon: <MailIcon style={iconStyle} /> }
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -72,7 +89,9 @@ const NavBar = ({ home }) => {
                   sx={{ display: 'block' }}
                   disableRipple={true}
                 >
-                  <Typography variant="button" sx={{ fontWeight: 'bold' }}>{page.name}</Typography>
+                  <NavBarLink variant="button">
+                    {page.name}
+                  </NavBarLink>
                 </Button>
               </Link>
             ))}

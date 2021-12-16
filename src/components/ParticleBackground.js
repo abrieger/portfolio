@@ -6,20 +6,18 @@ const ParticleBackground = () => {
     id="tsparticles"
     options={{
       background: {
-        color: {
-          value: "#111",
-        },
+        image: "radial-gradient(#222, #000)"
       },
       fpsLimit: 60,
       interactivity: {
         events: {
           onClick: {
-            enable: false,
+            enable: true,
             mode: "push",
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "connect",
           },
           resize: true,
         },
@@ -31,12 +29,18 @@ const ParticleBackground = () => {
             size: 40,
           },
           push: {
-            quantity: 4,
+            quantity: 5,
           },
           repulse: {
             distance: 200,
             duration: 0.4,
           },
+          connect: {
+            distance: 900,
+            links: {
+              opacity: 1
+            }
+          }
         },
       },
       particles: {
@@ -49,7 +53,7 @@ const ParticleBackground = () => {
         move: {
           direction: "none",
           enable: true,
-          outMode: "bounce",
+          outMode: "destroy",
           random: false,
           speed: 2,
           straight: false,
@@ -59,7 +63,7 @@ const ParticleBackground = () => {
             enable: true,
             value_area: 800,
           },
-          value: 20,
+          value: 0,
         },
         opacity: {
           value: 0.5,
@@ -73,13 +77,14 @@ const ParticleBackground = () => {
         },
       },
       detectRetina: true,
-      emitters: {
+      emitters: [
+      {
         position: {
           y: 50,
           x: -20
         },
         rate: {
-          delay: 10,
+          delay: 20,
           quantity: 1
         },
         size: {
@@ -103,7 +108,7 @@ const ParticleBackground = () => {
             value: 40
           },
           move: {
-            speed: 10,
+            speed: 5,
             outModes: {
               default: "destroy",
               left: "none"
@@ -126,7 +131,54 @@ const ParticleBackground = () => {
             }
           }
         }
+      },
+      {
+        position: {
+        y: 50,
+        x: 50
+      },
+      rate: {
+        delay: 3,
+        quantity: 5
+      },
+      size: {
+        width: 0,
+        height: 0
+      },
+      particles: {
+        color: {
+          value: ["#e6dc87", "#70ffde"],
+        },
+        collisions: {
+          enable: false,
+        },
+        move: {
+          direction: "none",
+          enable: true,
+          outMode: "destroy",
+          random: false,
+          speed: 2,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+          value: 20,
+        },
+        opacity: {
+          value: 0.5,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          random: true,
+          value: 5,
+        },
       }
+      }],
     }}
   />
   )

@@ -35,14 +35,14 @@ DarkMode = createTheme(DarkMode, {
       styleOverrides: {
         root: {
           color: DarkMode.palette.text.primary,
-          fontSize: '22pt',
+          fontSize: '24pt',
           cursor: 'pointer',
           '&:hover': {
             color: DarkMode.palette.text.secondary,
           }
         }
       }
-    }
+    },
   },
 })
 

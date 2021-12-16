@@ -18,7 +18,7 @@ export const skillIcons = [
   { icon: <SiGitlab/>, types: [ALL, TOOLS],  title: 'Gitlab', when: 'several UNSW courses' },
   { icon: <SiGithub/>, types: [ALL, TOOLS], title: 'Github', when: 'everywhere!' },
   { icon: <SiGithubactions/>, types: [ALL, TOOLS], title: 'Github Actions', when: 'Sunswift Racing and CSESoc Circles project' },
-  { icon: <SiGnubash/>, types: [ALL, TOOLS], title: 'Bash', when: 'UNSW Sofware Construction Tools and Techniques course' },
+  { icon: <SiGnubash/>, types: [ALL, TOOLS], title: 'Bash', when: 'UNSW Software Construction Tools and Techniques course' },
   { icon: <SiJava/>, types: [ALL, BACKEND], title: 'Java', when: 'UNSW Object-Oriented Programming course projects'  },
   { icon: <SiJavascript/>, types: [ALL, FRONTEND], title: 'Javascript', when: 'UNSW Frontend Programming course projects, Sunswift Racing and this website' },
   { icon: <SiJira/>, types: [ALL, TOOLS], title: 'Jira', when: 'CSESoc Circles project' },

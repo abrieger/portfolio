@@ -48,7 +48,7 @@ const About = () => {
       {showAbout ?
         <>
         <StyledPara variant='body1'>
-          Before joining the <EmphasisAlt component="span">Computer Science degree at UNSW</EmphasisAlt>, I worked as a lawyer for three years. I tried many areas of law during that time, ranging from criminal to corporate law. Yet there was always an itch I couldn’t scratch and it took me a long time to pinpoint and articulate what was missing: <Emphasis component="span">creativity</Emphasis>.
+        I worked as a lawyer for three years before joining the <EmphasisAlt component="span">Computer Science degree at UNSW</EmphasisAlt>, trying everything from criminal to corporate law. Yet there was always an itch I couldn’t scratch and it took me a long time to pinpoint and articulate what was missing: <Emphasis component="span">creativity</Emphasis>.
         </StyledPara>
         <StyledPara variant='body1'>
           My first lines of code helped me choose what cuisine to have for dinner using Python’s random library. It was simple (and heavily biased), but I was hooked:
@@ -58,7 +58,7 @@ const About = () => {
           Coding has opened up a new world of <Emphasis component="span">possibility</Emphasis> and <Emphasis component="span">innovation</Emphasis>. Rather than analysing the past and litigating over what has happened, I can now think in terms of what could be. The time was not wasted in my previous career. It allows me to bring a <Emphasis component="span">unique perspective</Emphasis> to software engineering. I appreciate that all code has context and that products are designed with purpose.
         </StyledPara>
         <StyledPara variant='body1'>
-          I am now in my penultimate year of Computer Science at UNSW. I have worked as an <EmphasisAlt component="span">assistant tutor</EmphasisAlt> for COMP1511 Programming Fundamentals over the past two terms, have been a member of a UNSW <EmphasisAlt component="span">CSESoc Software Project team member</EmphasisAlt> in 2021, and have recently joined <EmphasisAlt component="span">Sunswift Racing</EmphasisAlt>. There’s always more to learn and I am excited to continue this journey into software engineering. <BoldBox component="span" onClick={toggleShow} aria-label='Minimise text'>Less</BoldBox>
+          I am now in my penultimate year of Computer Science at UNSW. I have worked as an <EmphasisAlt component="span">assistant tutor</EmphasisAlt> for COMP1511 Programming Fundamentals over the past two terms, was a UNSW <EmphasisAlt component="span">CSESoc Software Project team member</EmphasisAlt> in 2021, and have recently joined <EmphasisAlt component="span">Sunswift Racing</EmphasisAlt>. There’s always more to learn and I am excited to continue my journey into software engineering. <BoldBox component="span" onClick={toggleShow} aria-label='Minimise text'>Less</BoldBox>
         </StyledPara>
         </>
         : <StyledPara>
