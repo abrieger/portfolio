@@ -8,6 +8,7 @@ const StyledButton = styled(Button)(({theme}) => ({
   borderRadius: '10px',
   width: '100px',
   maxWidth: '150px',
+  padding: 0,
   '&:hover': {
     backgroundColor: theme.palette.text.alternate,
     color: theme.palette.background.primary,
@@ -15,9 +16,9 @@ const StyledButton = styled(Button)(({theme}) => ({
   }
 }))
 
-const CustomButton = ({ text, type }) => {
+const CustomButton = ({ text, type='', handleClick='' }) => {
   return (
-    <StyledButton type={type} >{text}</StyledButton>
+    <StyledButton type={type} onClick={handleClick}>{text}</StyledButton>
   )
 }
 

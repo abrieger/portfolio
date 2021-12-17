@@ -24,40 +24,17 @@ const StyledButton = styled(Button)(({selected, index, theme}) => ({
 }))
 
 const SkillsGrid = styled(Grid)(({theme}) => ({
-  // fontSize: '24pt', 
   display: 'flex', 
-  // flexDirection: 'column',
-  // justifyContent: 'center', 
-  // flexWrap: 'wrap',
-  // gap: '0.5em',
   border: `1px solid ${theme.palette.text.alternate}`,
-  // width: '80%',
   borderRadius: '10px',
   marginTop: '0.5em'
-}))
-
-const SmallButtonText = styled(Typography)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    display: 'block'
-  },
-  [theme.breakpoints.up('sm')]: {
-    display: 'none'
-  }
-}))
-
-const MedButtonText = styled(Typography)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    display: 'none'
-  },
-  [theme.breakpoints.up('sm')]: {
-    display: 'block'
-  }
 }))
 
 const TechnicalSkills = () => {
   const [selected, setSelected] = React.useState('0');
 
   const handleClick = (e) => {
+    console.log(e.target.id);
     setSelected(e.target.id[5]);
   }
 
@@ -78,18 +55,34 @@ const TechnicalSkills = () => {
       <StyledButton 
         selected={selected}
         index={'1'}
-        id={'abtn-1'}
-        onClick={handleClick}>
-          <SmallButtonText variant="subtitle">FE</SmallButtonText>
-          <MedButtonText variant="subtitle">Frontend</MedButtonText>
+        id={'abtn-1s'}
+        onClick={handleClick}
+        sx={{ display: {xs: 'block', sm: 'none' }}}>
+          FE
+      </StyledButton>
+      <StyledButton 
+        selected={selected}
+        index={'1'}
+        id={'abtn-1m'}
+        onClick={handleClick}
+        sx={{ display: {xs: 'none', sm: 'block' }}}>
+          Frontend
+      </StyledButton>      
+      <StyledButton 
+        selected={selected}
+        index={'2'}
+        id={'abtn-2s'}
+        onClick={handleClick}
+        sx={{ display: {xs: 'block', sm: 'none' }}}>
+          BE
       </StyledButton>
       <StyledButton 
         selected={selected}
         index={'2'}
-        id={'abtn-2'}
-        onClick={handleClick}>
-          <SmallButtonText variant="subtitle">BE</SmallButtonText>
-          <MedButtonText variant="subtitle">Backend</MedButtonText>
+        id={'abtn-2m'}
+        onClick={handleClick}
+        sx={{ display: {xs: 'none', sm: 'block' }}}>
+          Backend
       </StyledButton>
       <StyledButton
         selected={selected}
