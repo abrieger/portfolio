@@ -42,7 +42,7 @@ const iconStyle = {
 
 const NavBar = ({ home }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  console.log(home)
+
   const pages = [
     { name: 'Home', to: '/', icon: <HomeIcon style={iconStyle} /> },
     { name: 'About', to: '/about', icon: <PersonIcon style={iconStyle}/> },

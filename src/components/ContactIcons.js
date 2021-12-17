@@ -13,7 +13,6 @@ const IconContainer = styled(Container)(({theme}) => ({
 }))
 
 const ContactIcons = ({ size }) => {
-  console.log(size);
   const icons = [{ icon: <GitHubIcon aria-label="Link to GitHub page" style={{ fontSize: size }} />,
   to: "https://github.com/abrieger" },
   { icon: <LinkedInIcon aria-label="Link to LinkedIn page" style={{ fontSize: size }} />,
