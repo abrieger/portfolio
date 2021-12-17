@@ -36,6 +36,24 @@ const SkillsGrid = styled(Grid)(({theme}) => ({
   marginTop: '0.5em'
 }))
 
+const SmallButtonText = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    display: 'block'
+  },
+  [theme.breakpoints.up('sm')]: {
+    display: 'none'
+  }
+}))
+
+const MedButtonText = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    display: 'none'
+  },
+  [theme.breakpoints.up('sm')]: {
+    display: 'block'
+  }
+}))
+
 const TechnicalSkills = () => {
   const [selected, setSelected] = React.useState('0');
 
@@ -62,14 +80,16 @@ const TechnicalSkills = () => {
         index={'1'}
         id={'abtn-1'}
         onClick={handleClick}>
-          Frontend
+          <SmallButtonText variant="subtitle">FE</SmallButtonText>
+          <MedButtonText variant="subtitle">Frontend</MedButtonText>
       </StyledButton>
       <StyledButton 
         selected={selected}
         index={'2'}
         id={'abtn-2'}
         onClick={handleClick}>
-          Backend
+          <SmallButtonText variant="subtitle">BE</SmallButtonText>
+          <MedButtonText variant="subtitle">Backend</MedButtonText>
       </StyledButton>
       <StyledButton
         selected={selected}

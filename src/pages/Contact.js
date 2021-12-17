@@ -30,6 +30,7 @@ const StyledTextField = styled(TextField)(({theme}) => ({
 }))
 
 const useLocalStorageState = (key, initialVal) => {
+  // Custom hook to record email sent in localStorage and hide form until hard refresh
   const [state, setState] = React.useState(() => {
     try {
       const valInStorage = localStorage.getItem(key);

@@ -84,7 +84,7 @@ const ParticleBackground = () => {
           x: -20
         },
         rate: {
-          delay: 20,
+          delay: 15,
           quantity: 1
         },
         size: {
