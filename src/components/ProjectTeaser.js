@@ -26,7 +26,6 @@ const ProjectTeaser = ({ project }) => {
 
   const handleShowProject = (e) => {
     setShowModal(true);
-    console.log(e.target);
   }
 
   return (

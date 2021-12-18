@@ -16,7 +16,7 @@ const StyledButton = styled(Button)(({theme}) => ({
   }
 }))
 
-const CustomButton = ({ text, type='', handleClick='' }) => {
+const CustomButton = ({ text, type='', handleClick=null }) => {
   return (
     <StyledButton type={type} onClick={handleClick}>{text}</StyledButton>
   )

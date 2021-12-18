@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Dropdown from './Dropdown';
 import { styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
@@ -28,8 +28,12 @@ const LogoText = styled(Typography)(({theme}) => ({
   marginBottom: '-1px'
 }));
 
-const NavBarLink = styled(Typography)(({theme}) => ({
+const NavBarLink = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'selected' && prop !== 'name'
+})(({selected, name, theme}) => ({
   fontWeight: 'bold',
+  color: selected === name ? 
+    theme.palette.text.alternate : theme.palette.text.primary,
   '&:hover': {
     color: theme.palette.text.secondary
   }
@@ -40,8 +44,10 @@ const iconStyle = {
   fontSize: '18pt'
 }
 
+
 const NavBar = ({ home }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [selected, setSelected] = React.useState('HOME');
 
   const pages = [
     { name: 'Home', to: '/', icon: <HomeIcon style={iconStyle} /> },
@@ -50,11 +56,18 @@ const NavBar = ({ home }) => {
     { name: 'Contact', to: '/contact', icon: <MailIcon style={iconStyle} /> }
   ];
 
+  const location = useLocation();
+  React.useEffect(() => {
+    location.pathname === '/' ? setSelected('HOME') : 
+      setSelected(location.pathname.slice(1,).toUpperCase());
+  }, [location.pathname])
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (e) => {
+    setSelected(e.target.innerText);
     setAnchorElNav(null);
   };
 
@@ -88,8 +101,9 @@ const NavBar = ({ home }) => {
                   onClick={handleCloseNavMenu}
                   sx={{ display: 'block' }}
                   disableRipple={true}
+                  id={page.name}
                 >
-                  <NavBarLink variant="button">
+                  <NavBarLink variant="button" selected={selected} name={page.name.toUpperCase()}>
                     {page.name}
                   </NavBarLink>
                 </Button>

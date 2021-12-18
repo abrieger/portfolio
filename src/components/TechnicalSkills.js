@@ -34,7 +34,6 @@ const TechnicalSkills = () => {
   const [selected, setSelected] = React.useState('0');
 
   const handleClick = (e) => {
-    console.log(e.target.id);
     setSelected(e.target.id[5]);
   }
 

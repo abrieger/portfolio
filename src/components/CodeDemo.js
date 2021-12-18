@@ -2,7 +2,7 @@ import React from 'react';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import { Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 const StyledBox = styled(Box)(({theme}) => ({
   display: 'flex',
@@ -39,7 +39,7 @@ const getRandomInt = (max) => Math.floor(Math.random() * Math.ceil(max));
 const CodeDemo = () => {
   const [showCode, setShowCode] = React.useState('');
   const [appear, setAppear] = React.useState(false);
-
+  const nodeRef = React.useRef(null);
   const food = ['Pizza', 'Pad Thai', 'Schnitzel', 'something healthy :(', 
     'Pizza!', 'Pizza!!'];
 
@@ -64,17 +64,21 @@ const CodeDemo = () => {
         print(random.choice(["Pizza", "Pad Thai", "Schnitzel", "something healthy :(", "Pizza!", "Pizza!!"]))
       </code>
       </Box>
-      <Transition
-      in={appear}
-      timeout={duration}>
-      {state => (
-        <div style={{
-          ...fade,
-          ...transitionStyles[state]
-        }}>
-        <CodeBox>{showCode}</CodeBox>
-        </div>)}
-      </Transition>
+      <CSSTransition
+        in={appear}
+        timeout={duration}
+        nodeRef={nodeRef}
+      >
+        {state => (
+          <div style={{
+            ...fade,
+            ...transitionStyles[state]
+          }}
+            ref={nodeRef}
+          >
+            <CodeBox>{showCode}</CodeBox>
+          </div>)}
+      </CSSTransition>
     </StyledBox>
   )
 }

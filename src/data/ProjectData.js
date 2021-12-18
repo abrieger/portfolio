@@ -24,7 +24,8 @@ export const projectData = [
     links: [
 
     ],
-    video: ''
+    video: 'https://youtu.be/Zeb-AiiMIc0',
+    warning: 'Deployment expected in early 2022.',
   },
   {
     title: 'Portfolio',
@@ -40,10 +41,11 @@ export const projectData = [
     links: [
 
     ],
-    video: ''
+    video: 'https://youtu.be/7-kqjnNEzF0',
+    warning: ''
   },
   {
-    title: 'Dungeon Game',
+    title: 'Dungeons',
     skills: [{icon: <SiJava/>, title: 'Java'}],
     description: 'A dungeon crawler developed with object-oriented design principles for a UNSW course.',
     role: 'Backend',
@@ -52,7 +54,8 @@ export const projectData = [
     links: [
 
     ],
-    video: ''
+    video: 'https://youtu.be/6_Jzg-aua14',
+    warning: ''
   },
   {
     title: 'AirBrB',
@@ -68,7 +71,7 @@ export const projectData = [
     links: [
 
     ],
-    video: ''
+    video: 'https://youtu.be/Htp4mX69vpg',
+    warning: ''
   },
 ]
-// <iframe width="1504" height="855" src="https://www.youtube.com/embed/2r7jq_amiPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
