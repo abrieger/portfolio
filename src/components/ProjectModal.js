@@ -22,13 +22,12 @@ const ModalBox = styled(Box)(({theme}) => ({
   border: `3px solid ${theme.palette.text.alternate}`,
   borderRadius: '5px',
   boxShadow: 24,
-  padding: '10px',
+  padding: '1px',
   color: theme.palette.text.primary,
   fontSize: '18pt',
   textAlign: 'center',
   display: 'flex',
   flexDirection: 'column',
-  // alignItems: 'center',
   gap: '0.5em'
 }))
 
@@ -139,7 +138,7 @@ const ProjectModal = ({ showModal, setShowModal, project }) => {
             <ReactPlayer
               url={project.video}
               width='800px'
-              height='500px'
+              height='400px'
             />
           </Box>
           </ModalBox>
