@@ -63,7 +63,7 @@ const About = () => {
         </>
         : <StyledPara sx={{ textAlign: 'center' }}>
           <EmphasisAlt component="span" sx={{ fontWeight: 'bold' }}>tl;dr </EmphasisAlt>
-          I am a  Computer Science student in my penultimate year at UNSW looking to <Emphasis component="span">make an impact</Emphasis> in the software space. <BoldBox component="span" onClick={toggleShow} aria-label='Expand text'>More</BoldBox>
+          I am a  Computer Science student in my final year at UNSW looking to <Emphasis component="span">make an impact</Emphasis> in the software space. <BoldBox component="span" onClick={toggleShow} aria-label='Expand text'>More</BoldBox>
           </StyledPara>}
         <Box sx={{ marginTop: '1.5em' }}>
           <Typography variant="h5" sx={{ textAlign: 'left' }}>
